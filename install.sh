@@ -7,4 +7,9 @@ mkdir -p "$HOME/.config/X11"
 ln -sf "$HOME/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 ln -sf "$HOME/dotfiles/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 rm -rf "$HOME/.config/i3"
-ln -s "$HOME/dotfiles/i3" "$HOME/.config"
+ln -s "$HOME/dotfiles/i3" "$HOME/.config/i3"
+
+mkdir -p "$HOME/.config/zsh"
+ln -sf "$HOME/dotfiles/zsh/.zshenv" "$HOME"
+ln -sf "$HOME/dotfiles/zsh/.zshrc" "$HOME/.config/zsh"
+
