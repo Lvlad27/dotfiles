@@ -12,4 +12,6 @@ ln -s "$HOME/dotfiles/i3" "$HOME/.config/i3"
 mkdir -p "$HOME/.config/zsh"
 ln -sf "$HOME/dotfiles/zsh/.zshenv" "$HOME"
 ln -sf "$HOME/dotfiles/zsh/.zshrc" "$HOME/.config/zsh"
+rm -rf "$HOME/.config/zsh/external"
+ln -sf "$HOME/dotfiles/zsh/external" "$HOME/.config/zsh"
 
