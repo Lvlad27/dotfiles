@@ -33,6 +33,7 @@ if [ ! -f /usr/bin/theme.sh ]; then
     sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M' && sudo chmod +x /usr/bin/theme.sh
 fimkdir -p "$DOTFILES/scripts"
 ln -s /usr/bin/theme.sh "$DOTFILES/scripts/theme.sh"
+fi
 
 ##########
 # dunst #
@@ -40,3 +41,13 @@ ln -s /usr/bin/theme.sh "$DOTFILES/scripts/theme.sh"
 
 mkdir -p "$XDG_CONFIG_HOME/dunst"
 ln -sf "$DOTFILES/dunst/dunstrc" "$XDG_CONFIG_HOME/dunst/dunstrc"
+
+########
+# tmux #
+########
+mkdir -p "$XDG_CONFIG_HOME/tmux"
+ln -sf "$DOTFILES/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
+
+[ ! -d "$XDG_CONFIG_HOME/tmux/plugins/tpm" ] \
+&& git clone https://github.com/tmux-plugins/tpm \
+"$XDG_CONFIG_HOME/tmux/plugins/tpm"
