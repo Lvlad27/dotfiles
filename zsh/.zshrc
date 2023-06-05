@@ -38,15 +38,16 @@ source $HOME/dotfiles/zsh/external/zsh-z.plugin.zsh
 # source scripts
 source $DOTFILES/zsh/scripts.sh
 
+# start i3 at startup
+if [ "$(tty)" = "/dev/tty1" ];
+then
+    pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
+fi
+
 # verify that the command “fzf” exists, and if it does, it sources fzf completion for Zsh and creates some key bindings you can use in the shell
 if [ $(command -v "fzf") ]; then
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
-fi
-
-if [ "$(tty)" = "/dev/tty1" ];
-then
-pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"
 fi
 
 # source zsh syntax highlighting (keep at bottom !)
