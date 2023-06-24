@@ -51,7 +51,7 @@ source /usr/share/fzf/key-bindings.zsh
 fi
 
 # add theme.sh config script
-source "$HOME/dotfiles/zsh/external/theme-config.sh"
+# source "$HOME/dotfiles/zsh/external/theme-config.sh"
 
 # source zsh syntax highlighting (keep at bottom !)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
