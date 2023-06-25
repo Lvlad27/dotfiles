@@ -36,7 +36,24 @@ lsp.format_on_save({
 		timeout_ms = 10000,
 	},
 	servers = {
-		["null-ls"] = { "javascript", "typescript", "lua" },
+		["null-ls"] = {
+			"lua",
+			"javascript",
+			"typescript",
+			"javascriptreact",
+			"typescriptreact",
+			"css",
+			"scss",
+			"less",
+			"html",
+			"json",
+			"jsonc",
+			"yaml",
+			"markdown",
+			"markdown.mdx",
+			"graphql",
+			"handlebars",
+		},
 	},
 })
 

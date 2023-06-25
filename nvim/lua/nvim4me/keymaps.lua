@@ -1,7 +1,7 @@
 local function map(mode, lhs, rhs, opts)
-    opts = opts or {}
-    opts.silent = opts.silent ~= false
-    vim.keymap.set(mode, lhs, rhs, opts)
+	opts = opts or {}
+	opts.silent = opts.silent ~= false
+	vim.keymap.set(mode, lhs, rhs, opts)
 end
 local opts = { noremap = true, silent = true }
 
@@ -11,11 +11,19 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 map("n", "<C-i>", "<C-i>", opts)
 
+-- Telescope
 map("n", "<leader>pf", "<cmd>Telescope find_files<cr>", opts)
 map("n", "<C-p>", "<cmd>Telescope git_files<cr>", opts)
+map("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<leader>pv", "<cmd>Telescope file_browser<cr>", opts)
+map("n", "<leader>pv", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", opts)
+
+-- Lazygit
 map("n", "<C-g>", "<cmd>lua _LAZYGIT_TOGGLE()<cr>", opts)
--- Initial setup only
-map("n", "<leader>pv", vim.cmd.Ex)
+
+-- NvimTreeToggle
+map("n", "<C-b>", "<cmd>NvimTreeToggle<cr>", opts)
+
 -- Use jj as escape
 map("i", "jj", "<Esc>", opts)
 
@@ -150,3 +158,6 @@ map("n", "<leader>w-", "<C-W>s", { desc = "Split window below" })
 map("n", "<leader>w\\", "<C-W>v", { desc = "Split window right" })
 map("n", "<leader>-", "<C-W>s", { desc = "Split window below" })
 map("n", "<leader>\\", "<C-W>v", { desc = "Split window right" })
+
+-- Trouble
+map("n", "<leader>xx", "<cmd>TroubleToggle<cr>")
