@@ -7,21 +7,31 @@ local plugins = {
 
 	-- Appearance and UI
 	"kanagawa",
+	"dashboard",
+	"bufferline",
+	"colorizer",
 	"lualine",
+	"notify",
+	"dressing",
 
 	-- Utilities
 	"nvim-tree",
 	"telescope",
 	"treesitter-context",
 	"treesitter",
+	"gitsigns",
+	"indentline",
+	"diffview",
+	"tabout",
+	"spectre",
 
 	-- LSP
 	"lsp-mason",
 	"lsp-zero",
 	"cmp",
 	"prettier",
-	"lsp-kind",
 	"lsp-null-ls",
+	"lsp-kind",
 	"lsp-lines",
 	"lsp-signature",
 	"lsp-saga",
