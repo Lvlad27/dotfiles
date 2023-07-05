@@ -22,12 +22,6 @@ ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
 mkdir -p "$XDG_DATA_HOME"
 cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
 
-# Check if theme.sh exists, if not download and make it executable
-if [ ! -f /usr/bin/theme.sh ]; then
-    sudo curl -Lo /usr/bin/theme.sh 'https://git.io/JM70M' && sudo chmod +x /usr/bin/theme.sh
-fimkdir -p "$DOTFILES/scripts"
-ln -s /usr/bin/theme.sh "$DOTFILES/scripts/theme.sh"
-
 ##########
 # dunst #
 ##########
