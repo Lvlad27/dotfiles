@@ -2,17 +2,25 @@ local plugins = {
 	-- Plugin Manager, load first
 	"lazy",
 
+	-- Keybindings
+	"which-key",
+
 	-- Appearance and UI
 	"kanagawa",
+	"dashboard",
+	"bufferline",
 	"colorizer",
 	"lualine",
 	"notify",
+	"dressing",
 
 	-- Utilities
+	"nvim-tree",
 	"telescope",
 	"treesitter-context",
 	"treesitter",
 	"gitsigns",
+	"indentline",
 	"diffview",
 	"tabout",
 	"spectre",
