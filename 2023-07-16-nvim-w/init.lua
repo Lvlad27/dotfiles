@@ -1,0 +1,5 @@
+require('nvim4me.options')
+require('nvim4me.keymaps')
+require('nvim4me.functions')
+require('nvim4me.plugins.active')
+require('nvim4me.autocmd')

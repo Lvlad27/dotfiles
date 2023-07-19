@@ -1,4 +1,4 @@
-alias ll='exa -l --icons'
+alias ll='exa -l --icons -a'
 
 # +-----+
 # | Git |
@@ -25,7 +25,7 @@ alias rm='rm -v'
 
 # +--------+
 # | neovim |
-# +-------+#
+# +--------+
 
 alias v='nvim'
 
