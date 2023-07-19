@@ -1,5 +1,6 @@
 ln -sf "$HOME/dotfiles/zsh/aliases" "$HOME/.config/zsh/aliases"
 autoload -Uz compinit; compinit
+autoload -Uz promptinit; promptinit
 
 # Autocomplete hidden files
 _comp_options+=(globdots)
@@ -49,9 +50,6 @@ if [ $(command -v "fzf") ]; then
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 fi
-
-# add theme.sh config script
-# source "$HOME/dotfiles/zsh/external/theme-config.sh"
 
 # source zsh syntax highlighting (keep at bottom !)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
