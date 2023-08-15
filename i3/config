@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:'JetBrainsMono Nerd Font' 12
+font pango:JetBrainsMono Nerd Font 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -50,6 +50,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+
+# start file manager
+bindsym $mod+n exec thunar
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -285,12 +288,13 @@ client.placeholder #000000 #0c0c0c $white2 #000000 #0c0c0c
 for_window [instance="htop_scratchpad"] move scratchpad, border none
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show; exec alacritty --class htop_scratchpad -e htop
 
-# delete status bar
+# fix yad bug
+for_window [class="Yad"] floating enable
+
 bar {
-    status_command i3status --config ~/.config/i3/i3status.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks-bottom.conf
     # Disable all tray icons
-    tray_output none
-    # tray_output primary
+    tray_output primary
     colors {
         background $black2
         statusline $white2
@@ -305,6 +309,8 @@ bar {
    }
 }
 
+# execute monitor setup on startup
+exec --no-startup-id $HOME/.config/X11/monitor.sh
 
 # Manage screen
 set $mode_display Config monitor resolution - Default config (d)
@@ -325,18 +331,18 @@ workspace "2" output DP-4
 workspace "3" output DP-4
 workspace "4" output DP-4
 workspace "5" output DP-4
-workspace "6" output HDMI-0
-workspace "7" output DP-2
-
+workspace "6" output DP-2
+workspace "7" output HDMI-0
+ 
 # Automatically open applications on specific workspaces
-assign [class="Alacritty"] 1
+for_window [class="Alacritty"] move to workspace 1, focus
+for_window [class="Code"] move to workspace 2, focus
+for_window [class="Brave-browser"] move to workspace 3, focus
+for_window [class="Thunar"] move to workspace 4, focus
+
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty -e tmux'
 exec --no-startup-id i3-msg 'workspace 2; exec code'
-exec --no-startup-id i3-msg 'workspace 3; exec brave --incognito'
-exec --no-startup-id i3-msg 'workspace 4; exec brave'
-exec --no-startup-id i3-msg 'workspace 5; exec brave https://chat.openai.com/?model=gpt-4'
-exec --no-startup-id i3-msg 'workspace 6; exec brave https://trello.com/b/uTCI3h1Y/portfolio'
-exec --no-startup-id i3-msg 'workspace 7; exec brave https://www.youtube.com/'
+exec --no-startup-id i3-msg 'workspace 3; exec brave'
 
 # move any focused window to workspace 1 when you press $mod+Shift+u, and to workspace 2 when you press $mod+Shif+i.
 # bindsym $mod+Shift+u move workspace 1
