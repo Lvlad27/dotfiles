@@ -29,3 +29,8 @@ alias rm='rm -v'
 
 alias v='nvim'
 
+# +----------+
+# | Projects |
+# +----------+
+
+alias proj='z Projects'

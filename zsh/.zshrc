@@ -53,3 +53,10 @@ fi
 
 # source zsh syntax highlighting (keep at bottom !)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# npm global binaries
+export NPM_GLOBAL_HOME="/home/Vlad/.npm-global/bin"
+case ":$PATH:" in
+  *":$NPM_GLOBAL_HOME:"*) ;;
+  *) export PATH="$NPM_GLOBAL_HOME:$PATH" ;;
+esac
