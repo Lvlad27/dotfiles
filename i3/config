@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:JetBrainsMono Nerd Font 12
+font pango:JetBrainsMono Nerd Font 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -293,8 +293,7 @@ bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show; exec alacritt
 for_window [class="Yad"] floating enable
 
 bar {
-    status_command i3blocks -c ~/.config/i3/i3blocks-bottom.conf
-    # Disable all tray icons
+    status_command i3blocks -vvv 2>~/.config/i3/i3blocks/i3blocks.err | tee ~/.config/i3/i3blocks/i3blocks.out
     tray_output primary
     colors {
         background $black2
@@ -327,13 +326,15 @@ mode "$mode_display" {
 bindsym $mod+x mode "$mode_display"
 
 # Assign workspaces to monitors
-workspace "1" output DP-4
-workspace "2" output DP-4
-workspace "3" output DP-4
-workspace "4" output DP-4
-workspace "5" output DP-4
-workspace "6" output DP-2
-workspace "7" output HDMI-0
+workspace "1" output DP-2
+workspace "2" output DP-2
+workspace "3" output DP-2
+workspace "4" output DP-2
+workspace "5" output DP-2
+workspace "6" output HDMI-1
+workspace "7" output DVI-I-2-1
+workspace "8" output eDP-1
+
  
 # Automatically open applications on specific workspaces
 for_window [class="Alacritty"] move to workspace 1, focus
