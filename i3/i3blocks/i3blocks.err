@@ -1625,3 +1625,81 @@ DEBUG bar_poll_exited:121: [battery] exited
 DEBUG block_reap:313: [battery] process 1014312 exited with 0
 DEBUG block_update:229: [battery] updated successfully
 DEBUG json_print_bar:147: [wifi] no text to display, skipping
+DEBUG sched_start:177: received signal 17 (Child exited)
+DEBUG bar_poll_exited:121: [cpu_usage] exited
+DEBUG block_reap:313: [cpu_usage] process 1014311 exited with 0
+DEBUG block_update:229: [cpu_usage] updated successfully
+DEBUG json_print_bar:147: [wifi] no text to display, skipping
+DEBUG sched_start:177: received signal 14 (Alarm clock)
+DEBUG bar_poll_outdated:81: [iface] outdated
+DEBUG block_spawn:293: [iface] forked child 1014344 at 1701426418
+DEBUG bar_poll_outdated:81: [bandwidth] outdated
+DEBUG block_spawn:293: [bandwidth] forked child 1014345 at 1701426418
+DEBUG bar_poll_outdated:81: [time] outdated
+DEBUG block_spawn:293: [time] forked child 1014346 at 1701426418
+DEBUG sched_start:177: received signal 17 (Child exited)
+DEBUG bar_poll_exited:121: [time] exited
+DEBUG block_reap:313: [time] process 1014346 exited with 0
+DEBUG block_update:229: [time] updated successfully
+DEBUG json_print_bar:147: [wifi] no text to display, skipping
+DEBUG sched_start:177: received signal 17 (Child exited)
+DEBUG bar_poll_exited:121: [bandwidth] exited
+DEBUG block_reap:313: [bandwidth] process 1014345 exited with 0
+DEBUG block_update:229: [bandwidth] updated successfully
+DEBUG json_print_bar:147: [wifi] no text to display, skipping
+DEBUG sched_start:177: received signal 17 (Child exited)
+DEBUG bar_poll_exited:121: [iface] exited
+DEBUG block_reap:313: [iface] process 1014344 exited with 0
+DEBUG block_update:229: [iface] updated successfully
+DEBUG json_print_bar:147: [wifi] no text to display, skipping
+DEBUG sched_start:177: received signal 14 (Alarm clock)
+DEBUG bar_poll_outdated:81: [wifi] outdated
+DEBUG block_spawn:293: [wifi] forked child 1014367 at 1701426423
+DEBUG bar_poll_outdated:81: [bandwidth] outdated
+DEBUG block_spawn:293: [bandwidth] forked child 1014368 at 1701426423
+DEBUG bar_poll_outdated:81: [cpu_usage] outdated
+DEBUG block_spawn:293: [cpu_usage] forked child 1014369 at 1701426423
+DEBUG bar_poll_outdated:81: [time] outdated
+DEBUG block_spawn:293: [time] forked child 1014370 at 1701426423
+DEBUG sched_start:177: received signal 17 (Child exited)
+DEBUG bar_poll_exited:121: [time] exited
+DEBUG block_reap:313: [time] process 1014370 exited with 0
+DEBUG block_update:229: [time] updated successfully
+DEBUG json_print_bar:147: [wifi] no text to display, skipping
+DEBUG sched_start:177: received signal 17 (Child exited)
+DEBUG bar_poll_exited:121: [wifi] exited
+DEBUG block_reap:313: [wifi] process 1014367 exited with 0
+DEBUG block_update:229: [wifi] updated successfully
+DEBUG json_print_bar:147: [wifi] no text to display, skipping
+DEBUG sched_start:177: received signal 17 (Child exited)
+DEBUG bar_poll_exited:121: [bandwidth] exited
+DEBUG block_reap:313: [bandwidth] process 1014368 exited with 0
+DEBUG block_update:229: [bandwidth] updated successfully
+DEBUG json_print_bar:147: [wifi] no text to display, skipping
+DEBUG sched_start:177: received signal 17 (Child exited)
+DEBUG bar_poll_exited:121: [cpu_usage] exited
+DEBUG block_reap:313: [cpu_usage] process 1014369 exited with 0
+DEBUG block_update:229: [cpu_usage] updated successfully
+DEBUG json_print_bar:147: [wifi] no text to display, skipping
+DEBUG sched_start:177: received signal 14 (Alarm clock)
+DEBUG bar_poll_outdated:81: [iface] outdated
+DEBUG block_spawn:293: [iface] forked child 1014401 at 1701426428
+DEBUG bar_poll_outdated:81: [bandwidth] outdated
+DEBUG block_spawn:293: [bandwidth] forked child 1014402 at 1701426428
+DEBUG bar_poll_outdated:81: [time] outdated
+DEBUG block_spawn:293: [time] forked child 1014403 at 1701426428
+DEBUG sched_start:177: received signal 17 (Child exited)
+DEBUG bar_poll_exited:121: [time] exited
+DEBUG block_reap:313: [time] process 1014403 exited with 0
+DEBUG block_update:229: [time] updated successfully
+DEBUG json_print_bar:147: [wifi] no text to display, skipping
+DEBUG sched_start:177: received signal 17 (Child exited)
+DEBUG bar_poll_exited:121: [iface] exited
+DEBUG block_reap:313: [iface] process 1014401 exited with 0
+DEBUG block_update:229: [iface] updated successfully
+DEBUG bar_poll_exited:121: [bandwidth] exited
+DEBUG block_reap:313: [bandwidth] process 1014402 exited with 0
+DEBUG block_update:229: [bandwidth] updated successfully
+DEBUG json_print_bar:147: [wifi] no text to display, skipping
+DEBUG sched_start:177: received signal 17 (Child exited)
+DEBUG json_print_bar:147: [wifi] no text to display, skipping
