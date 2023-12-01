@@ -11,6 +11,7 @@ ln -sf "$DOTFILES/nvim" "$XDG_CONFIG_HOME"
 ln -sf "$DOTFILES/alacritty/alacritty.yml" "$XDG_CONFIG_HOME/alacritty/alacritty.yml"
 rm -rf "$XDG_CONFIG_HOME/i3"
 ln -s "$DOTFILES/i3" "$XDG_CONFIG_HOME/i3"
+ln -s "$DOTFILES/polybar" "$XDG_CONFIG_HOME/polybar"
 
 mkdir -p "$XDG_CONFIG_HOME/zsh"
 ln -sf "$DOTFILES/zsh/.zshenv" "$HOME"
