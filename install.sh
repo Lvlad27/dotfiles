@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export XDG_CONFIG_HOME=$HOME/.config
+export DOTFILES=~/dotfiles
+
 mkdir -p "$XDG_CONFIG_HOME/X11"
 
 rm -rf "$XDG_CONFIG_HOME/X11"
