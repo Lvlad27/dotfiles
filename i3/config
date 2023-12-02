@@ -34,20 +34,22 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-#bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
-#bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
-#bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
-
-# Use pactl to adjust volume in PulseAudio.
+# Use amixer to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMicMute exec amixer -q -D pulse sset Capture toggle && pkill -RTMIN+10 i3blocks
 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+# enable sound switcher on startup https://github.com/yktoo/indicator-sound-switcher
+exec --no-startup-id indicator-sound-switcher
 
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute "alsa_input.pci-0000_00_1f.3.analog-stereo" toggle && pkill -RTMIN+10 i3blocks
+# Use pactl to adjust volume in PulseAudio.
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute "alsa_input.pci-0000_00_1f.3.analog-stereo" toggle && pkill -RTMIN+10 i3blocks
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -122,6 +124,10 @@ bindsym $mod+a focus parent
 
 # use print screen to trigger flameshot
 bindsym Print exec flameshot gui
+
+# use xkill
+bindsym Ctrl+Escape exec xkill
+
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -210,7 +216,7 @@ workspace_auto_back_and_forth yes
 focus_follows_mouse no
 
 # add keystroke to lock system
-set $i3lockwall i3lock -i ~/Documents/onlyfans.png
+set $i3lockwall i3lock -i $HOME/dotfiles/i3/feh/ubuntu-black-4k.png
 # set $i3lockwall sh ~/dotfiles/i3/i3lock.sh
 bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
 
@@ -233,7 +239,8 @@ mode "$mode_system" {
 
 bindsym $mod+BackSpace mode "$mode_system"
 
-exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/01.png
+# https://github.com/D3Ext/aesthetic-wallpapers
+exec_always --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/ubuntu-black-4k.png
 
 
 # floating pop up automatically
@@ -254,8 +261,8 @@ set $black2 #444444
 set $trueblack #000000
 
 # red
-set $red1 #d75f5f
-set $red2 #d75f5f
+set $red1 #f69697
+set $red2 #f69697
 
 # green
 set $green1 #87AF87
@@ -345,20 +352,29 @@ workspace "2" output DP-2
 workspace "3" output DP-2
 workspace "4" output DP-2
 workspace "5" output DP-2
-workspace "6" output HDMI-1
-workspace "7" output DVI-I-2-1
-workspace "8" output eDP-1
+workspace "6" output DP-2
+workspace "7" output DP-2
+workspace "8" output HDMI-1
+workspace "9" output DVI-I-2-1
+workspace "10" output eDP-11
 
  
 # Automatically open applications on specific workspaces
-for_window [class="Alacritty"] move to workspace 1, focus
-for_window [class="Code"] move to workspace 2, focus
-for_window [class="Brave-browser"] move to workspace 3, focus
-for_window [class="Thunar"] move to workspace 4, focus
+assign [class="Alacritty"] $ws1
+assign [class="Code"] $ws2
+assign [class="Slack"] $ws5
+assign [class="teams-for-linux"] $ws6
+assign [class="Thunar"] $ws7
+assign [class="Com.cisco.anyconnect.gui"] $ws7
+assign [class="Google-chrome"] $ws9
 
-exec --no-startup-id i3-msg 'workspace 1; exec alacritty -e tmux'
-exec --no-startup-id i3-msg 'workspace 2; exec code'
-exec --no-startup-id i3-msg 'workspace 3; exec brave'
+exec --no-startup-id i3-msg -e tmux
+exec --no-startup-id i3-msg code
+exec --no-startup-id i3-msg google-chrome
+exec --no-startup-id i3-msg slack
+exec --no-startup-id i3-msg teams-for-linux
+exec --no-startup-id i3-msg '$ws10; exec alacritty -e tmux new-session'
+exec --no-startup-id i3-msg /opt/cisco/anyconnect/bin/vpnui
 
 # move any focused window to workspace 1 when you press $mod+Shift+u, and to workspace 2 when you press $mod+Shif+i.
 # bindsym $mod+Shift+u move workspace 1

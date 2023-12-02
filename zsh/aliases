@@ -20,8 +20,12 @@ alias rm='rm -v'
 # | tmux |
 # +------+
 
-
-
+# +-----+
+# | apt |
+# +-----+
+alias u='sudo apt-get update && sudo apt-get upgrade -y'
+alias up='sudo apt-get update'
+alias ug='sudo apt-get upgrade -y'
 
 # +--------+
 # | neovim |
