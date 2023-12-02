@@ -332,14 +332,17 @@ workspace "2" output DP-4
 workspace "3" output DP-4
 workspace "4" output DP-4
 workspace "5" output DP-4
-workspace "6" output DP-2
-workspace "7" output HDMI-0
+workspace "6" output DP-4
+workspace "7" output DP-4
+workspace "8" output DP-4
+workspace "9" output DP-2
+workspace "10" output HDMI-0
  
 # Automatically open applications on specific workspaces
-for_window [class="Alacritty"] move to workspace 1, focus
-for_window [class="Code"] move to workspace 2, focus
-for_window [class="Brave-browser"] move to workspace 3, focus
-for_window [class="Thunar"] move to workspace 4, focus
+assign [class="Alacritty"] $ws1
+assign [class="Code"] $ws2
+assign [class="Brave-browser"] $ws3
+assign [class="Thunar"] $ws4
 
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty -e tmux'
 exec --no-startup-id i3-msg 'workspace 2; exec code'
