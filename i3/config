@@ -247,6 +247,7 @@ exec_always --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/ubuntu-bla
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="Arandr"] floating enable
+for_window [instance="outlook.office365.com__mail"] floating disable
 
 # set colors
 
@@ -261,8 +262,8 @@ set $black2 #444444
 set $trueblack #000000
 
 # red
-set $red1 #f69697
-set $red2 #f69697
+set $red1 #d30000
+set $red2 #d30000
 
 # green
 set $green1 #87AF87
@@ -366,15 +367,18 @@ assign [class="Slack"] $ws5
 assign [class="teams-for-linux"] $ws6
 assign [class="Thunar"] $ws7
 assign [class="Com.cisco.anyconnect.gui"] $ws7
+assign [instance="outlook.office365.com__mail"] $ws8
 assign [class="Google-chrome"] $ws9
 
-exec --no-startup-id i3-msg -e tmux
-exec --no-startup-id i3-msg code
-exec --no-startup-id i3-msg google-chrome
-exec --no-startup-id i3-msg slack
-exec --no-startup-id i3-msg teams-for-linux
-exec --no-startup-id i3-msg '$ws10; exec alacritty -e tmux new-session'
-exec --no-startup-id i3-msg /opt/cisco/anyconnect/bin/vpnui
+exec --no-startup-id alacritty -e tmux
+exec --no-startup-id code
+exec --no-startup-id google-chrome
+exec --no-startup-id google-chrome --app="https://outlook.office365.com/mail/"
+exec --no-startup-id slack
+exec --no-startup-id teams-for-linux
+# exec --no-startup-id '$ws10; exec alacritty -e tmux new-session'
+exec --no-startup-id thunar
+exec --no-startup-id /opt/cisco/anyconnect/bin/vpnui
 
 # move any focused window to workspace 1 when you press $mod+Shift+u, and to workspace 2 when you press $mod+Shif+i.
 # bindsym $mod+Shift+u move workspace 1
