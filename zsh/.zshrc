@@ -38,6 +38,7 @@ source $HOME/dotfiles/zsh/external/zsh-z.plugin.zsh
 
 # source scripts
 source $DOTFILES/zsh/scripts.sh
+source $DOTFILES/zsh/.env_secrets.sh
 
 # start i3 at startup
 if [ "$(tty)" = "/dev/tty1" ];

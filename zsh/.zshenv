@@ -1,3 +1,6 @@
+# Jira
+export JIRA_API_TOKEN=${JIRA_API_TOKEN}
+
 # For dotfiles
 export XDG_CONFIG_HOME="$HOME/.config"
 # For specific data

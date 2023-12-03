@@ -23,9 +23,10 @@ alias rm='rm -v'
 # +-----+
 # | apt |
 # +-----+
-alias u='sudo apt-get update && sudo apt-get upgrade -y'
-alias up='sudo apt-get update'
-alias ug='sudo apt-get upgrade -y'
+alias ai='sudo apt-get install -y'
+alias au='sudo apt-get update && sudo apt-get upgrade -y'
+alias aup='sudo apt-get update'
+alias aug='sudo apt-get upgrade -y'
 
 # +--------+
 # | neovim |
