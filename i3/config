@@ -359,7 +359,6 @@ workspace "8" output HDMI-1
 workspace "9" output DVI-I-2-1
 workspace "10" output eDP-11
 
- 
 # Automatically open applications on specific workspaces
 assign [class="Alacritty"] $ws1
 assign [class="Code"] $ws2
@@ -368,15 +367,14 @@ assign [class="teams-for-linux"] $ws6
 assign [class="Thunar"] $ws7
 assign [class="Com.cisco.anyconnect.gui"] $ws7
 assign [instance="outlook.office365.com__mail"] $ws8
-assign [class="Google-chrome"] $ws9
+assign [class="Brave-browser"] $ws9
 
 exec --no-startup-id alacritty -e tmux
 exec --no-startup-id code
-exec --no-startup-id google-chrome
-exec --no-startup-id google-chrome --app="https://outlook.office365.com/mail/"
+exec --no-startup-id brave-browser
+exec --no-startup-id brave-browser --app="https://outlook.office365.com/mail/"
 exec --no-startup-id slack
 exec --no-startup-id teams-for-linux
-# exec --no-startup-id '$ws10; exec alacritty -e tmux new-session'
 exec --no-startup-id thunar
 exec --no-startup-id /opt/cisco/anyconnect/bin/vpnui
 
