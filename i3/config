@@ -109,7 +109,7 @@ bindsym $mod+CTRL+v split h
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stackin
+bindsym $mod+s layout stacked
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -126,7 +126,9 @@ bindsym $mod+a focus parent
 bindsym Print exec flameshot gui
 
 # use xkill
-bindsym Ctrl+Escape exec xkill
+bindsym $mod+CTRL+x exec xkill
+
+
 
 
 # focus the child container
