@@ -323,9 +323,26 @@ for_window [class="Yad"] floating enable
 bar {
     # status_command i3blocks -vvv 2>~/.config/i3/i3blocks/i3blocks.err | tee ~/.config/i3/i3blocks/i3blocks.out
     # status_command i3blocks -c ~/.config/i3/i3blocks/config -vvv 2>~/.config/i3/i3blocks/i3blocks.err | tee ~/.config/i3/i3blocks/i3blocks.out
-    # status_command i3blocks -c ~/.config/i3/i3blocks.conf -vvv 2>~/.config/i3/i3blocks/i3blocks.err | tee ~/.config/i3/i3blocks/i3blocks.out
     status_command i3blocks -c ~/.config/i3/i3blocks/config
+    colors {
+        background $black2
+        statusline $white2
+        separator $white2
+
+        #                   border backoground text
+        focused_workspace   $background $background $red1
+        active_workspace    $black2 $black1 $white2
+        inactive_workspace  $black1 $black2 $foreground
+        urgent_workspace    $red1 $red1 $white2
+        binding_mode        $background $red2 $white
+   }
+}
+
+bar {
     tray_output primary
+    position top
+    output DP-2
+    workspace_buttons no
     colors {
         background $black2
         statusline $white2
@@ -373,6 +390,7 @@ assign [class="Alacritty"] $ws1
 assign [class="Code"] $ws2
 assign [class="Slack"] $ws5
 assign [class="teams-for-linux"] $ws5
+assign [class="zoom"] $ws5
 assign [class="Thunar"] $ws6
 assign [instance="www.youtube.com"] $ws7
 assign [instance="outlook.office365.com__mail"] $ws8
