@@ -379,18 +379,15 @@ assign [instance="outlook.office365.com__mail"] $ws8
 assign [class="Brave-browser"] $ws9
 assign [class="Com.cisco.anyconnect.gui"] $ws10
 
-exec_always --no-startup-id alacritty -e tmux
-exec_always --no-startup-id code
-exec_always --no-startup-id brave-browser
-exec_always --no-startup-id brave-browser --app="https://outlook.office365.com/mail/"
-exec_always --no-startup-id brave-browser --app="https://www.youtube.com/"
-exec_always --no-startup-id slack
-exec_always --no-startup-id teams-for-linux
-exec_always --no-startup-id thunar
-exec_always --no-startup-id /opt/cisco/anyconnect/bin/vpnui
-
-# per workspace layout script
-exec_always ~/.config/i3/per-workspace-layout.pl
+exec --no-startup-id alacritty -e tmux
+exec --no-startup-id code
+exec --no-startup-id brave-browser
+exec --no-startup-id brave-browser --app="https://outlook.office365.com/mail/"
+exec --no-startup-id brave-browser --app="https://www.youtube.com/"
+exec --no-startup-id slack
+exec --no-startup-id teams-for-linux
+exec --no-startup-id thunar
+exec --no-startup-id /opt/cisco/anyconnect/bin/vpnui
 
 # move any focused window to workspace 1 when you press $mod+Shift+u, and to workspace 2 when you press $mod+Shif+i.
 # bindsym $mod+Shift+u move workspace 1
@@ -399,6 +396,9 @@ exec_always ~/.config/i3/per-workspace-layout.pl
 
 # start dunst on system startup
 exec --no-startup-id dunst
+
+# toggle notifications
+bindsym $mod+Shift+n exec dunstctl set-paused toggle
 
 # start picom on system startup
 # exec --no-startup-id picom
