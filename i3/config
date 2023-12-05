@@ -129,8 +129,6 @@ bindsym Print exec flameshot gui
 bindsym $mod+CTRL+x exec xkill
 
 
-
-
 # focus the child container
 #bindsym $mod+d focus child
 
@@ -228,6 +226,10 @@ set $i3lockwall i3lock -i ~/.config/i3/feh/ubuntu-black-4k.png
 # set $i3lockwall sh ~/dotfiles/i3/i3lock.sh
 bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
 
+# set screen saver and dpms timings
+exec --no-startup-id xset s 3600 3600
+exec --no-startup-id xset dpms 3600 3600 3600
+
 # shutdown / restart / suspend ...
 set $mode_system \
 System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Ctrl+s) shutdown
@@ -324,25 +326,7 @@ bar {
     # status_command i3blocks -vvv 2>~/.config/i3/i3blocks/i3blocks.err | tee ~/.config/i3/i3blocks/i3blocks.out
     # status_command i3blocks -c ~/.config/i3/i3blocks/config -vvv 2>~/.config/i3/i3blocks/i3blocks.err | tee ~/.config/i3/i3blocks/i3blocks.out
     status_command i3blocks -c ~/.config/i3/i3blocks/config
-    colors {
-        background $black2
-        statusline $white2
-        separator $white2
-
-        #                   border backoground text
-        focused_workspace   $background $background $red1
-        active_workspace    $black2 $black1 $white2
-        inactive_workspace  $black1 $black2 $foreground
-        urgent_workspace    $red1 $red1 $white2
-        binding_mode        $background $red2 $white
-   }
-}
-
-bar {
     tray_output primary
-    position top
-    output DP-2
-    workspace_buttons no
     colors {
         background $black2
         statusline $white2
@@ -356,6 +340,26 @@ bar {
         binding_mode        $background $red2 $white
    }
 }
+
+# optional top bar with only the tray icons
+# bar {
+#     tray_output primary
+#     position top
+#     output DP-2
+#     workspace_buttons no
+#     colors {
+#         background $black2
+#         statusline $white2
+#         separator $white2
+
+#         #                   border backoground text
+#         focused_workspace   $background $background $red1
+#         active_workspace    $black2 $black1 $white2
+#         inactive_workspace  $black1 $black2 $foreground
+#         urgent_workspace    $red1 $red1 $white2
+#         binding_mode        $background $red2 $white
+#    }
+# }
 
 # execute monitor setup on startup
 exec --no-startup-id $HOME/.config/X11/monitor.sh
@@ -394,14 +398,14 @@ assign [class="zoom"] $ws5
 assign [class="Thunar"] $ws6
 assign [instance="www.youtube.com"] $ws7
 assign [instance="outlook.office365.com__mail"] $ws8
-assign [class="Brave-browser"] $ws9
+assign [class="Google-chrome"] $ws9
 assign [class="Com.cisco.anyconnect.gui"] $ws10
 
 exec --no-startup-id alacritty -e tmux
 exec --no-startup-id code
-exec --no-startup-id brave-browser
-exec --no-startup-id brave-browser --app="https://outlook.office365.com/mail/"
-exec --no-startup-id brave-browser --app="https://www.youtube.com/"
+exec --no-startup-id google-chrome
+exec --no-startup-id google-chrome --app="https://outlook.office365.com/mail/"
+exec --no-startup-id google-chrome --app="https://www.youtube.com/"
 exec --no-startup-id slack
 exec --no-startup-id teams-for-linux
 exec --no-startup-id thunar
