@@ -319,16 +319,13 @@ client.placeholder #000000 #0c0c0c $white2 #000000 #0c0c0c
 for_window [instance="htop_scratchpad"] move scratchpad, border none
 bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show; exec alacritty --class htop_scratchpad -e htop
 
-# execute monitor setup on startup
-exec --no-startup-id $HOME/.config/X11/monitor.sh
-
 # Manage screen
 set $mode_display Config monitor resolution - \
 Default config (d), laptop standalone (s)
 
 mode "$mode_display" {
-    bindsym d exec --no-startup-id sh "$HOME/.config/X11/monitor.sh", mode "default"
-    bindsym s exec --no-startup-id sh "$HOME/.config/X11/laptop.sh", mode "default"
+    bindsym d exec --no-startup-id "autorandr --change monitors"
+    bindsym s exec --no-startup-id "autorandr --change laptop"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
