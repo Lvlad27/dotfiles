@@ -292,9 +292,11 @@ bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show; exec alacritt
 # fix yad bug
 for_window [class="Yad"] floating enable
 
+# Change language
+exec --no-startup-id "setxkbmap -layout us,ro -option 'grp:ctrl_shift_toggle'"
+
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks-bottom.conf
-    # Disable all tray icons
     tray_output primary
     colors {
         background $black2
