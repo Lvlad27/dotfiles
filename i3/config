@@ -417,6 +417,16 @@ exec --no-startup-id /opt/cisco/anyconnect/bin/vpnui
 # start dunst on system startup
 exec --no-startup-id dunst
 
+# exec policy-kit
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+
+# gnome screencast feature
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings &
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-media-keys &
+
+# gnome screencast feature
+bindsym $mod+ALT+SHIFT+r exec "dbus-send --session --type=method_call --dest=org.gnome.Shell.Screencast /org/gnome/Shell/Screencast org.gnome.Shell.Screencast.Screencast string:'%Y-%m-%d_%H-%M-%S_$(xdg-user-dir VIDEOS)/screencast.webm' array:string:''"
+
 # toggle notifications
 bindsym $mod+Shift+n exec dunstctl set-paused toggle
 
