@@ -39,3 +39,4 @@ alias v='nvim'
 # +----------+
 
 alias proj='z Projects'
+alias kport=''
