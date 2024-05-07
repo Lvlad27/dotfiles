@@ -293,7 +293,7 @@ bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show; exec alacritt
 for_window [class="Yad"] floating enable
 
 # Change language
-exec --no-startup-id "setxkbmap -layout us,ro -option 'grp:ctrl_alt_toggle'"
+exec_always --no-startup-id "setxkbmap -layout us,ro -option 'grp:ctrl_alt_toggle'"
 
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks-bottom.conf
@@ -343,8 +343,6 @@ workspace "10" output HDMI-0
 # Automatically open applications on specific workspaces
 assign [class="Alacritty"] $ws1
 assign [class="Code"] $ws2
-assign [class="Brave-browser"] $ws3
-assign [class="Thunar"] $ws4
 
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty -e tmux'
 exec --no-startup-id i3-msg 'workspace 2; exec code'
