@@ -31,8 +31,16 @@ if [ -f "$usermodmap" ]; then
 	xmodmap "$usermodmap"
 fi
 
-# start some nice programs
 
+# Set cursor size
+export XCURSOR_SIZE=14
+
+# Disable middle mouse button paste
+# This requires knowing the device ID and the button mapping, the default is to disable button 2
+MOUSE_ID=$(xinput list | grep -i mouse | head -n 1 | grep -o 'id=[0-9]*' | cut -d '=' -f 2)
+xinput set-button-map "$MOUSE_ID" 1 0 3
+
+# start some nice programs
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
 	for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
 		[ -x "$f" ] && . "$f"
