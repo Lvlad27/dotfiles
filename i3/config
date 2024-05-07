@@ -293,7 +293,7 @@ bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show; exec alacritt
 for_window [class="Yad"] floating enable
 
 # Change language
-exec --no-startup-id "setxkbmap -layout us,ro -option 'grp:ctrl_shift_toggle'"
+exec --no-startup-id "setxkbmap -layout us,ro -option 'grp:ctrl_alt_toggle'"
 
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks-bottom.conf

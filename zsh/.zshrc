@@ -60,3 +60,9 @@ case ":$PATH:" in
   *":$NPM_GLOBAL_HOME:"*) ;;
   *) export PATH="$NPM_GLOBAL_HOME:$PATH" ;;
 esac
+
+export N_PREFIX="/home/Vlad/.npm-global"
+export PATH="$N_PREFIX/bin:$PATH"
+
+export YARN_HOME="$HOME/.yarn/bin"
+export PATH="$YARN_HOME:$PATH"
