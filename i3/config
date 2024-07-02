@@ -321,11 +321,12 @@ bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show; exec alacritt
 
 # Manage screen
 set $mode_display Config monitor resolution - \
-Default config (d), laptop standalone (s)
+Default config (d), laptop standalone (s), popesti (p)
 
 mode "$mode_display" {
     bindsym d exec --no-startup-id "autorandr --change monitors"
     bindsym s exec --no-startup-id "autorandr --change laptop"
+    bindsym s exec --no-startup-id "autorandr --change popesti"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -377,6 +378,16 @@ bar {
 # }
 
 # Assign workspaces to monitors
+# workspace "1" output HDMI-1
+# workspace "2" output HDMI-1
+# workspace "3" output HDMI-1
+# workspace "4" output HDMI-1
+# workspace "5" output HDMI-1
+# workspace "6" output HDMI-1
+# workspace "7" output HDMI-1
+# workspace "8" output HDMI-1
+# workspace "9" output HDMI-1
+# workspace "10" output eDP-1
 workspace "1" output DP-2
 workspace "2" output DP-2
 workspace "3" output DP-2
@@ -401,8 +412,8 @@ assign [class="Com.cisco.anyconnect.gui"] $ws10
 
 exec --no-startup-id alacritty -e tmux
 exec --no-startup-id code
-exec --no-startup-id google-chrome
-exec --no-startup-id google-chrome --app="https://outlook.office365.com/mail/"
+exec --no-startup-id brave-browser
+exec --no-startup-id brave-browser --app="https://outlook.office365.com/mail/"
 exec --no-startup-id teams-for-linux
 exec --no-startup-id thunar
 exec --no-startup-id /opt/cisco/anyconnect/bin/vpnui
@@ -433,3 +444,16 @@ bindsym $mod+Shift+n exec dunstctl set-paused toggle
 
 # start with correct monitor config
 exec --no-startup-id sh "$HOME/.config/X11/monitor.sh", mode "default"
+
+# # Start recording the DP-2 screen using ffmpeg with notification
+# bindsym $mod+Shift+F9 exec --no-startup-id "notify-send -t 1000 'Screen Recording' 'Started recording on DP-2'; ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0+1920,0 ~/Videos/screen_record_$(date +'%Y-%m-%d_%H-%M-%S').mp4"
+
+# # Stop recording with notification
+# bindsym $mod+Shift+F10 exec --no-startup-id "pkill -SIGINT ffmpeg && notify-send -t 1000 'Screen Recording' 'Stopped recording'"
+
+# Start recording the DP-2 screen using ffmpeg with notification
+bindsym $mod+Shift+F9 exec --no-startup-id "/home/vladleontescu/dotfiles/scripts/record_and_convert.sh"
+
+# Stop recording with notification
+bindsym $mod+Shift+F10 exec --no-startup-id "pkill -SIGINT ffmpeg && notify-send -t 1000 'Screen Recording' 'Stopped recording'"
+
