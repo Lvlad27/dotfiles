@@ -234,6 +234,9 @@ bindsym $mod+Shift+r restart
 # add keystroke to lock system
 bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
 
+# open dotfiles in vs code
+bindsym $mod+Shift+d exec sh -c 'code -n -r /home/Vlad/dotfiles'
+
 #######################################
 # MODES
 #######################################
