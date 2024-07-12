@@ -33,7 +33,7 @@ fi
 
 
 # Set cursor size
-export XCURSOR_SIZE=14
+export XCURSOR_SIZE=20
 
 # Disable middle mouse button paste
 # This requires knowing the device ID and the button mapping, the default is to disable button 2
