@@ -315,10 +315,6 @@ workspace "7" output DP-4
 workspace "8" output DP-4
 workspace "9" output DP-2
 workspace "10" output HDMI-0
- 
-# Automatically open applications on specific workspaces
-assign [class="Alacritty"] $ws1
-assign [class="Code"] $ws2
 
 #######################################
 # STARTUP
@@ -339,7 +335,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/01.png
+exec --no-startup-id feh --no-fehbg --bg-fill "$HOME/Pictures/Wallpapers/arch.jpg"
 
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty -e tmux'
 exec --no-startup-id i3-msg 'workspace 2; exec code'
