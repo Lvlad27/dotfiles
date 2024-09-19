@@ -56,13 +56,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # npm global binaries
 export NPM_GLOBAL_HOME="/home/Vlad/.npm-global/bin"
-case ":$PATH:" in
-  *":$NPM_GLOBAL_HOME:"*) ;;
-  *) export PATH="$NPM_GLOBAL_HOME:$PATH" ;;
-esac
-
 export N_PREFIX="/home/Vlad/.npm-global"
-export PATH="$N_PREFIX/bin:$PATH"
-
 export YARN_HOME="$HOME/.yarn/bin"
-export PATH="$YARN_HOME:$PATH"
+export PATH="$NPM_GLOBAL_HOME:$N_PREFIX/bin:$YARN_HOME:$PATH"
