@@ -48,8 +48,8 @@ fi
 
 # verify that the command “fzf” exists, and if it does, it sources fzf completion for Zsh and creates some key bindings you can use in the shell
 if [ $(command -v "fzf") ]; then
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
 
 # source zsh syntax highlighting (keep at bottom !)
