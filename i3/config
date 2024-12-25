@@ -197,7 +197,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # use print screen to trigger flameshot
-bindsym Print exec flameshot gui
+bindsym $mod+p exec flameshot gui
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -335,7 +335,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-exec --no-startup-id feh --no-fehbg --bg-fill "$HOME/Pictures/Wallpapers/arch.jpg"
+exec_always feh --bg-scale "$HOME/Pictures/wallpapers/arch.jpg"
 
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty -e tmux'
 exec --no-startup-id i3-msg 'workspace 2; exec code'
@@ -344,7 +344,6 @@ exec --no-startup-id i3-msg 'workspace 3; exec brave'
 # start dunst on system startup
 exec --no-startup-id dunst
 
-# start picom on system startup
 # exec --no-startup-id picom
 
 # start with correct monitor config
