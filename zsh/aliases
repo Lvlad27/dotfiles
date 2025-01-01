@@ -20,8 +20,7 @@ alias rm='rm -v'
 # | tmux |
 # +------+
 
-
-
+alias tmn='tmux new-session'
 
 # +--------+
 # | neovim |
