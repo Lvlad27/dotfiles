@@ -1,34 +1,30 @@
 [colors]
 draw_bold_text_with_bright_colors = true
 
-# Kanagawa Theme
-[colors.primary]
- background = "#1f1f28"
- foreground = "#dcd7ba"
-
-[colors.normal]
-black = "#090618"
-red = "#c34043"
-green = "#76946a"
-yellow = "#c0a36e"
-blue = "#7e9cd8"
-magenta = "#957fb8"
-cyan = "#6a9589"
-white = "#c8c093"
-
 [colors.bright]
-black = "#727169"
-red = "#e82424"
-green = "#98bb6c"
-yellow = "#e6c384"
-blue = "#7fb4ca"
-magenta = "#938aa9"
-cyan = "#7aa89f"
-white = "#dcd7ba"
-
-[colors.selection]
-text = "#c8c093"
-background = "#2d4f67"
+black = "#403833"
+red = "#E8838F"
+green = "#8BAE68"
+yellow = "#D68C67"
+blue = "#61ABDA"
+magenta = "#CF86C1"
+cyan = "#65B8C1"
+white = "#888F94"
+[colors.cursor]
+cursor = "#C4CACF"
+text = "#1C1917"
+[colors.normal]
+black = "#1C1917"
+blue = "#6099C0"
+cyan = "#66A5AD"
+green = "#819B69"
+magenta = "#B279A7"
+red = "#DE6E7C"
+white = "#B4BDC3"
+yellow = "#B77E64"
+[colors.primary]
+background = "#1C1917"
+foreground = "#B4BDC3"
 
 [font]
 size = 10
@@ -43,7 +39,7 @@ y = 0
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
-style = "SemiBold"
+style = "Regular"
 
 [font.offset]
 x = 0
