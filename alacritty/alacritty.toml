@@ -39,7 +39,7 @@ y = 0
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
-style = "Regular"
+style = "Medium"
 
 [font.offset]
 x = 0
