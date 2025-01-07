@@ -59,3 +59,6 @@ export NPM_GLOBAL_HOME="/home/Vlad/.npm-global/bin"
 export N_PREFIX="/home/Vlad/.npm-global"
 export YARN_HOME="$HOME/.yarn/bin"
 export PATH="$NPM_GLOBAL_HOME:$N_PREFIX/bin:$YARN_HOME:$PATH"
+
+# set alacritty as default terminal
+export TERMINAL=alacritty
