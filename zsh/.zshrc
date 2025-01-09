@@ -66,3 +66,5 @@ source /home/vladleontescu/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # n global binaries
 export PATH="$PATH:$HOME/n/bin"
 export N_PREFIX="$HOME/n"; PATH="$N_PREFIX/bin:$PATH"
+
+export PATH="/home/vladleontescu/nvim/bin:$PATH"

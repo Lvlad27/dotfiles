@@ -63,7 +63,7 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # start file manager
-bindsym $mod+n exec thunar
+bindsym $mod+n exec nautilus
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -326,7 +326,7 @@ bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show; exec alacritt
 
 # Manage screen
 set $mode_display Config monitor resolution - \
-Default config (d), laptop standalone (s), popesti (p)
+Default (d), laptop (s), popesti (p)
 
 mode "$mode_display" {
     bindsym d exec --no-startup-id "autorandr --change monitors"
