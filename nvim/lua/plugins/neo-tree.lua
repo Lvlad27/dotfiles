@@ -6,7 +6,6 @@ return {
     return { -- Return the configuration table
       filesystem = {
         filtered_items = {
-          visible = true,
           hide_dotfiles = false,
           hide_gitignored = false,
         },
@@ -17,7 +16,6 @@ return {
       window = {
         mappings = {
           ["w"] = "open", -- This adds 'w' as a key to open files
-          ["<cr>"] = "", -- This disables the enter key mapping
         },
       },
     }
