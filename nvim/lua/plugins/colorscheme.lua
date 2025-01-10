@@ -26,8 +26,34 @@ return {
     priority = 1000,
     opts = {
       transparent = true,
-      styles = { keywords = { italic = false } },
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+        functions = { italic = false },
+        variables = { italic = false },
+      },
+      on_highlights = function(highlights)
+        -- Override all possible JSX/TSX highlights
+        local jsx_highlights = {
+          ["@keyword.jsx"] = { italic = false },
+          ["@keyword.tsx"] = { italic = false },
+          ["@constructor.jsx"] = { italic = false },
+          ["@constructor.tsx"] = { italic = false },
+          ["@tag.jsx"] = { italic = false },
+          ["@tag.tsx"] = { italic = false },
+          ["@type.tsx"] = { italic = false },
+          ["@type.builtin.tsx"] = { italic = false },
+          ["@function.tsx"] = { italic = false },
+          ["@variable.tsx"] = { italic = false },
+        }
+        for group, settings in pairs(jsx_highlights) do
+          highlights[group] = vim.tbl_extend("force", highlights[group] or {}, settings)
+        end
+      end,
     },
+    config = function(_, opts)
+      require("solarized-osaka").setup(opts)
+    end,
   },
   {
     "rose-pine/neovim",
@@ -43,7 +69,7 @@ return {
     "ricardoraposo/nightwolf.nvim",
     lazy = false,
     priority = 1000,
-    opts = { transparency = true },
+    opts = { transparency = true, italic = false, theme = "black" },
   },
 
   {
@@ -85,7 +111,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = false, -- Disable setting background
+      transparent = true, -- Disable setting background
       terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
       colorblind = {
         enable = true, -- Enable colorblind support
@@ -110,23 +136,25 @@ return {
       },
     },
   },
-  { "Mofiqul/vscode.nvim", lazy = false, priority = 1000, opts = {} },
+  { "Mofiqul/vscode.nvim", lazy = false, priority = 1000, opts = { transparent = true, italic_comments = false } },
   { "ficcdaf/ashen.nvim", lazy = false, priority = 1000, opts = { transparent = true } },
-  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
-  { "olivercederborg/poimandres.nvim", lazy = false, priority = 1000 },
-  { "zootedb0t/citruszest.nvim", lazy = false, priority = 1000 },
   { "HoNamDuong/hybrid.nvim", lazy = false, priority = 1000, opts = {} },
-  { "p00f/alabaster.nvim", lazy = false, priority = 1000 },
   { "sample-usr/rakis.nvim", lazy = false, priority = 1000, opts = { transparent = true } },
-  { "mcauley-penney/ice-cave.nvim", lazy = false, priority = 1000 },
-  { "neanias/everforest-nvim", lazy = false, priority = 1000 },
+  { "dgox16/oldworld.nvim", lazy = false, priority = 1000 },
+  { "aliqyan-21/darkvoid.nvim", lazy = false, priority = 1000 },
   {
-    "navarasu/onedark.nvim",
+    "sho-87/kanagawa-paper.nvim",
     lazy = false,
     priority = 1000,
+    opts = { transparent = true, commentStyle = { italic = false } },
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
     opts = {
-      transparent = false,
-      style = "darker", -- dark/darker, cool/deep, warm/warmer
+      transparent_background = true,
+      no_italic = true,
     },
   },
   {
@@ -135,14 +163,21 @@ return {
     priority = 1000,
     opts = {
       commentStyle = { italic = false },
+      keywordStyle = { italic = false },
+      overrides = function()
+        return {
+          ["@variable.builtin"] = { italic = false },
+        }
+      end,
       theme = "wave", -- wave, lotus, dragon
+      transparent = true,
     },
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "solarized-osaka",
     },
   },
 }
