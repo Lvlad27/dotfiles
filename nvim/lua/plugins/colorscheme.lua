@@ -34,9 +34,16 @@ return {
     name = "rose-pine",
     config = function()
       require("rose-pine").setup({
-        styles = { transparency = false, italic = false },
+        styles = { transparency = true, italic = false },
       })
     end,
+  },
+
+  {
+    "ricardoraposo/nightwolf.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = { transparency = true },
   },
 
   {
