@@ -338,10 +338,10 @@ exec --no-startup-id nm-applet
 exec_always feh --bg-scale "$HOME/Pictures/wallpapers/arch.jpg"
 
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty -e tmux new-session -s dev nvim'
-exec --no-startup-id i3-msg 'workspace 2; exec brave'
+# exec --no-startup-id i3-msg 'workspace 2; exec brave'
 exec --no-startup-id i3-msg 'workspace 3; exec thunar'
 exec --no-startup-id i3-msg 'workspace 9; exec alacritty -e tmux'
-exec --no-startup-id i3-msg 'workspace 10; exec brave --new-window https://chat.openai.com https://claude.ai/projects'
+# exec --no-startup-id i3-msg 'workspace 10; exec brave --new-window https://chat.openai.com https://claude.ai/projects'
 
 # start dunst on system startup
 exec --no-startup-id dunst
