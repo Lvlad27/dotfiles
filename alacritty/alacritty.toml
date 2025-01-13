@@ -1,5 +1,5 @@
 [general]
-import = ["./themes/themes/kanagawa_wave.toml"]
+import = ["./themes/themes/rose_pine.toml"]
 
 # Window Customization
 [window]
