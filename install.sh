@@ -18,8 +18,13 @@ ln -s "$DOTFILES/X11" "$XDG_CONFIG_HOME/X11"
 ln -sf "$DOTFILES/nvim" "$XDG_CONFIG_HOME"
 
 # Handle symbolic link creation for alacritty
-mkdir -p "$XDG_CONFIG_HOME/alacritty"
-ln -sf "$DOTFILES/alacritty/alacritty.toml" "$XDG_CONFIG_HOME/alacritty/alacritty.toml"
+if [ -L "$XDG_CONFIG_HOME/alacritty" ]; then
+  rm "$XDG_CONFIG_HOME/alacritty"
+elif [ -e "$XDG_CONFIG_HOME/alacritty" ]; then
+  echo "Backing up existing alacritty config directory..."
+  mv "$XDG_CONFIG_HOME/alacritty" "$XDG_CONFIG_HOME/alacritty.backup.$(date +%Y%m%d_%H%M%S)"
+fi
+ln -s "$DOTFILES/alacritty" "$XDG_CONFIG_HOME/alacritty"
 
 # Handle symbolic link creation for i3
 if [ -L "$XDG_CONFIG_HOME/i3" ]; then

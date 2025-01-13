@@ -164,6 +164,15 @@ return {
     opts = {
       commentStyle = { italic = false },
       keywordStyle = { italic = false },
+      colors = {
+        theme = {
+          all = {
+            ui = {
+              bg_gutter = "none",
+            },
+          },
+        },
+      },
       overrides = function()
         return {
           ["@variable.builtin"] = { italic = false },
@@ -177,7 +186,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "solarized-osaka",
+      colorscheme = "kanagawa",
     },
   },
 }
