@@ -57,8 +57,9 @@ fi
 ln -sf "$DOTFILES/zsh/external" "$XDG_CONFIG_HOME/zsh"
 
 # Fonts
-mkdir -p "$XDG_DATA_HOME"
-cp -rf "$DOTFILES/fonts" "$XDG_DATA_HOME"
+mkdir -p "$HOME/.local/share/fonts"
+cp -rf "$DOTFILES/fonts/"* "$HOME/.local/share/fonts/"
+fc-cache -fv
 
 # dunst
 mkdir -p "$XDG_CONFIG_HOME/dunst"
