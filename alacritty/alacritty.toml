@@ -1,5 +1,5 @@
 [general]
-import = ["./themes/themes/kanagawa_wave.toml"]
+import = ["./themes/themes/mellow.toml"]
 
 # Window Customization
 [window]
@@ -17,7 +17,7 @@ multiplier = 3
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Medium" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 # normal = { family = "Iosevka", style = "Medium" }
 # bold = { family = "Iosevka", style = "Bold" }
 # italic = { family = "Iosevka", style = "Italic" }
