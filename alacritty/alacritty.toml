@@ -15,7 +15,7 @@ multiplier = 3
 
 # Font Customization
 [font]
-normal = { family = "JetBrainsMono Nerd Font ", style = "Medium" }
+normal = { family = "JetBrainsMono Nerd Font", style = "Medium" }
 bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
 # normal = { family = "Iosevka", style = "Medium" }
