@@ -335,7 +335,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-exec_always feh --bg-scale "$HOME/Pictures/wallpapers/arch.jpg"
+exec_always feh --bg-scale "$HOME/Pictures/wallpapers/astronaut.jpeg"
 
 exec --no-startup-id i3-msg 'workspace 1; exec alacritty -e tmux new-session -s dev nvim'
 # exec --no-startup-id i3-msg 'workspace 2; exec brave'

@@ -16,6 +16,7 @@ return {
       window = {
         mappings = {
           ["w"] = "open", -- This adds 'w' as a key to open files
+          ["<space>"] = "none", -- This adds 'w' as a key to open files
         },
       },
     }

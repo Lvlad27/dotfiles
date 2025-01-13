@@ -143,6 +143,57 @@ return {
   { "dgox16/oldworld.nvim", lazy = false, priority = 1000 },
   { "aliqyan-21/darkvoid.nvim", lazy = false, priority = 1000 },
   {
+    "tiagovla/tokyodark.nvim",
+    opts = {
+      transparent_background = true,
+      styles = {
+        comments = { italic = false }, -- style for comments
+        keywords = { italic = false }, -- style for keywords
+        identifiers = { italic = false }, -- style for identifiers
+        functions = {}, -- style for functions
+        variables = {}, -- style for variables
+      },
+    },
+    config = function(_, opts)
+      require("tokyodark").setup(opts) -- calling setup is optional
+    end,
+  },
+  {
+    "maxmx03/solarized.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      styles = {
+        enabled = true,
+        types = { italic = false },
+        functions = { italic = false },
+        parameters = { italic = false },
+        comments = { italic = false },
+        strings = { italic = false },
+        keywords = { italic = false },
+        variables = { italic = false },
+        constants = { italic = false },
+      },
+      transparent = {
+        enabled = true,
+        pmenu = true,
+        normal = true,
+        normalfloat = true,
+        neotree = true,
+        nvimtree = true,
+        whichkey = true,
+        telescope = true,
+        lazy = true,
+      },
+      variant = "summer", -- "spring" | "summer" | "autumn" | "winter" (default)
+    },
+    config = function(_, opts)
+      vim.o.termguicolors = true
+      vim.o.background = "dark"
+      require("solarized").setup(opts)
+    end,
+  },
+  {
     "sho-87/kanagawa-paper.nvim",
     lazy = false,
     priority = 1000,
@@ -164,6 +215,15 @@ return {
     opts = {
       commentStyle = { italic = false },
       keywordStyle = { italic = false },
+      colors = {
+        theme = {
+          all = {
+            ui = {
+              bg_gutter = "none",
+            },
+          },
+        },
+      },
       overrides = function()
         return {
           ["@variable.builtin"] = { italic = false },
@@ -173,11 +233,39 @@ return {
       transparent = true,
     },
   },
+  {
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.gruvbox_material_enable_italic = false
+    end,
+  },
+  {
+    "ilof2/posterpole.nvim",
+    priority = 1000,
+    config = function()
+      require("posterpole").setup({
+        -- config here
+      })
 
+      -- if you need colorscheme without termguicolors support
+      -- This variant set termguicolors to false, be aware of using it
+      -- vim.cmd("colorscheme posterpole-term")
+    end,
+  },
+  {
+    "killitar/obscure.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "solarized-osaka",
+      colorscheme = "kanagawa",
     },
   },
 }
