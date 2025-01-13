@@ -445,7 +445,7 @@ bindsym $mod+ALT+SHIFT+r exec "dbus-send --session --type=method_call --dest=org
 bindsym $mod+Shift+n exec dunstctl set-paused toggle
 
 # start picom on system startup
-exec --no-startup-id picom
+exec --no-startup-id picom --experimental-backends
 
 # start with correct monitor config
 exec --no-startup-id sh "$HOME/.config/X11/monitor.sh", mode "default"
