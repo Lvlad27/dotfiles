@@ -1,9 +1,9 @@
 [general]
-import = ["./themes/themes/mellow.toml"]
+# import = ["./themes/themes/rose_pine.toml"]
 
 # Window Customization
 [window]
-opacity = 0.8
+# opacity = 0.8
 dimensions = { columns = 140, lines = 38 }
 padding = { x = 0, y = 0 }
 decorations = "None"
@@ -15,14 +15,14 @@ multiplier = 3
 
 # Font Customization
 [font]
-normal = { family = "JetBrainsMono Nerd Font", style = "Medium" }
-bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-italic = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-# normal = { family = "Iosevka", style = "Medium" }
-# bold = { family = "Iosevka", style = "Bold" }
-# italic = { family = "Iosevka", style = "Italic" }
-size = 10
-# size = 1
+# normal = { family = "JetBrainsMono Nerd Font", style = "Medium" }
+# bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+# italic = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+normal = { family = "Iosevka Medium Extended", style = "Medium" }
+bold = { family = "Iosevka Medium Extended", style = "Bold" }
+italic = { family = "Iosevka Medium Extended", style = "Medium" }
+
+size = 10.5
 offset = { x = 0, y = 0 }
 glyph_offset = { x = 0, y = 0 }
 

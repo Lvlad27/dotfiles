@@ -124,10 +124,12 @@ return {
       vim.g.mellow_transparent = true
     end,
   },
+  { "kepano/flexoki-neovim", lazy = false, priority = 1000, name = "flexoki" },
+
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "mellow",
+      colorscheme = "rose-pine",
     },
   },
 }
