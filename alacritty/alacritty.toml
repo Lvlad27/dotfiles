@@ -29,7 +29,7 @@ normal = { family = "Iosevka Medium Extended", style = "Medium" }
 bold = { family = "Iosevka Extended", style = "Bold" }
 italic = { family = "Iosevka Extended", style = "Medium" }
 
-size = 10
+size = 10.5
 offset = { x = 0, y = 0 }
 glyph_offset = { x = 0, y = 0 }
 

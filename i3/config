@@ -14,7 +14,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:JetBrainsMono Nerd Font 10
-font pango:Iosevka 12
+font pango:Iosevka Medium 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -440,6 +440,9 @@ bindsym $mod+ALT+SHIFT+r exec "dbus-send --session --type=method_call --dest=org
 
 # toggle notifications
 bindsym $mod+Shift+n exec dunstctl set-paused toggle
+
+# connect to Galaxy Buds
+bindsym $mod+Shift+b exec "$HOME/vladleontescu/dotfiles/scripts/connect_buds.sh"
 
 # start picom on system startup
 # exec --no-startup-id picom --experimental-backends
