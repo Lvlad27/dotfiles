@@ -12,7 +12,7 @@ vim.api.nvim_create_user_command("CopyBufferInfo", function()
   vim.fn.setreg("+", combined)
   vim.notify("Buffer path and contents copied to clipboard", vim.log.levels.INFO)
 end, {})
-map("n", "<C-M-p>", ":CopyBufferInfo<CR>", { desc = "Copy buffer path and contents", silent = true })
+map("n", "<C-S-c>", ":CopyBufferInfo<CR>", { desc = "Copy buffer path and contents", silent = true })
 
 -- Remap Ctrl-D and Ctrl-U with centering
 map("n", "<C-d>", "<C-d>zz", opts)
@@ -24,6 +24,7 @@ map("i", "<C-c>", "<Esc>")
 -- Replacess all instances of the word under the cursor
 map("n", "<leader>bs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- Quick navigation for errors
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+map("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
+map("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
+map("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
+map("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
