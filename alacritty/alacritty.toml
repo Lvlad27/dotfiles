@@ -1,5 +1,8 @@
 [general]
 # import = ["./themes/themes/rose_pine.toml"]
+import = ["./themes/themes/everforest_dark.toml"]
+# [colors.primary]
+# background = '#333333'
 
 # Window Customization
 [window]
