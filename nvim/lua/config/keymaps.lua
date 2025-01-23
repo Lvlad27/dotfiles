@@ -27,3 +27,9 @@ map("n", "<leader>bs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- Quick navigation for errors
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+vim.keymap.set("n", "<leader>y#", function()
+  local relative_path = vim.fn.expand("%")
+  vim.fn.setreg("+", relative_path)
+  vim.notify("Copied relative path: " .. relative_path)
+end, { desc = "Copy relative path" })
