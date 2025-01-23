@@ -442,7 +442,7 @@ bindsym $mod+ALT+SHIFT+r exec "dbus-send --session --type=method_call --dest=org
 bindsym $mod+Shift+n exec dunstctl set-paused toggle
 
 # connect to Galaxy Buds
-bindsym $mod+Shift+b exec "$HOME/vladleontescu/dotfiles/scripts/connect_buds.sh"
+bindsym $mod+Shift+b exec "$HOME/dotfiles/scripts/connect_buds.sh"
 
 # start picom on system startup
 # exec --no-startup-id picom --experimental-backends
