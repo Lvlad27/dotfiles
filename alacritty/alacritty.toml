@@ -1,5 +1,5 @@
 [general]
-# import = ["./themes/themes/rose_pine.toml"]
+import = ["./themes/themes/gruvbox_material_medium_dark.toml"]
 
 # Window Customization
 [window]
