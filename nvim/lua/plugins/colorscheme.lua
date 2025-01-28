@@ -41,7 +41,7 @@ return {
 
           local hour = tonumber(os.date("%H"))
           local light_start = 7
-          local light_end = 18
+          local light_end = 17
 
           if hour >= light_start and hour < light_end then
             vim.opt.background = "light"
