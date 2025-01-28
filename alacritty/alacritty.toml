@@ -1,7 +1,7 @@
 [general]
 # import = ["./themes/themes/rose_pine.toml"]
 # import = ["./themes/themes/everforest_dark.toml"]
-import = ["./themes/themes/github_light_colorblind.toml"]
+import = ["./themes/themes/everforest_dark.toml"]
 
 # Window Customization
 [window]
