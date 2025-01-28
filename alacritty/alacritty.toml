@@ -1,8 +1,7 @@
 [general]
 # import = ["./themes/themes/rose_pine.toml"]
-import = ["./themes/themes/everforest_dark.toml"]
-# [colors.primary]
-# background = '#333333'
+# import = ["./themes/themes/everforest_dark.toml"]
+import = ["./themes/themes/github_light_colorblind.toml"]
 
 # Window Customization
 [window]
@@ -37,4 +36,4 @@ offset = { x = 0, y = 0 }
 glyph_offset = { x = 0, y = 0 }
 
 [env]
-TERM = "xterm-256color"
+TERM = "alacritty"
