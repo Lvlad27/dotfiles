@@ -20,10 +20,3 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.wo.conceallevel = 0
   end,
 })
-
--- vim.api.nvim_create_autocmd("ColorScheme", {
---   callback = function()
---     vim.api.nvim_set_hl(0, "SnacksIndent", { fg = "#2a2f38" }) -- More muted color for inactive
---     vim.api.nvim_set_hl(0, "SnacksIndentScope", { fg = "#908caa" }) -- Brighter for active
---   end,
--- })

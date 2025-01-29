@@ -22,37 +22,32 @@ return {
   {
     "projekt0n/github-nvim-theme",
     name = "github-theme",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+    lazy = false,
+    priority = 1000,
     config = function()
-      require("github-theme").setup({
-        -- ...
-      })
+      require("github-theme").setup({})
+      -- Set colorscheme immediately
+      -- vim.cmd("colorscheme github_light_colorblind")
+      -- Set our custom indent colors
+      vim.schedule(function()
+        vim.api.nvim_set_hl(0, "SnacksIndent", { fg = "#E7EBEF" })
+        vim.api.nvim_set_hl(0, "SnacksIndentScope", { fg = "#CED3D9" })
+      end)
     end,
   },
   {
     "LazyVim/LazyVim",
+    -- opts = {
+    --   colorscheme = "everforest",
+    -- },
     opts = function()
       vim.api.nvim_create_autocmd("User", {
         pattern = "LazyVimStarted",
         callback = function()
-          -- Ensure theme is loaded
           require("lazy").load({ plugins = { "github-theme" } })
-
-          local hour = tonumber(os.date("%H"))
-          local light_start = 7
-          local light_end = 17
-
-          if hour >= light_start and hour < light_end then
-            vim.opt.background = "light"
-            vim.cmd("colorscheme github_light_colorblind")
-          else
-            vim.opt.background = "dark"
-            vim.cmd("colorscheme everforest")
-          end
+          vim.cmd("colorscheme github_light_colorblind")
         end,
       })
-
       -- Return empty opts to prevent default colorscheme
       return {}
     end,

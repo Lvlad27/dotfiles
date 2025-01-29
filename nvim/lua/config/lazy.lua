@@ -51,3 +51,5 @@ require("lazy").setup({
     },
   },
 })
+
+print("Lazy setup completed")
