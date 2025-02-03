@@ -1,11 +1,11 @@
 [general]
 # import = ["./themes/themes/rose_pine.toml"]
 # import = ["./themes/themes/everforest_dark.toml"]
-import = ["./themes/themes/everforest_dark.toml"]
+import = ["./themes/themes/github_light_colorblind.toml"]
 
 # Window Customization
 [window]
-opacity = 0.8
+# opacity = 0.8
 dimensions = { columns = 140, lines = 38 }
 padding = { x = 0, y = 0 }
 decorations = "None"
