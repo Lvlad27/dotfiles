@@ -21,8 +21,17 @@ map("n", "<C-u>", "<C-u>zz", opts)
 -- Escape with Ctrl + c
 map("i", "<C-c>", "<Esc>")
 
+-- Save all buffers with Ctrl+S
+map("n", "<C-s>", ":wa<CR>", opts)
+map("i", "<C-s>", "<Esc>:wa<CR>", opts)
+
 -- Replacess all instances of the word under the cursor
 map("n", "<leader>bs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+map("n", "<A-j>", ":m .+1<CR>==", opts) -- move line up(n)
+map("n", "<A-k>", ":m .-2<CR>==", opts) -- move line down(n)
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- move line up(v)
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- move line down(v)
 
 -- Quick navigation for errors
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
