@@ -20,3 +20,23 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.wo.conceallevel = 0
   end,
 })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    -- Get current colorscheme
+    local current_theme = vim.g.colors_name
+
+    if current_theme == "github_light_colorblind" then
+      -- Set the light theme indent colors
+      vim.api.nvim_set_hl(0, "SnacksIndent", { fg = "#E7EBEF" })
+      vim.api.nvim_set_hl(0, "SnacksIndentScope", { fg = "#CED3D9" })
+    end
+
+    if current_theme == "rose-pine" then
+      -- Set the light theme indent colors
+      vim.api.nvim_set_hl(0, "SnacksIndent", { fg = "#32304a" })
+      vim.api.nvim_set_hl(0, "SnacksIndentScope", { fg = "#797593" })
+    end
+    -- If it's not github_light_colorblind, do nothing to preserve the theme's default colors
+  end,
+})

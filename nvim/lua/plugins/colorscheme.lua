@@ -1,31 +1,9 @@
 return {
-  -- {
-  --   "rose-pine/neovim",
-  --   name = "rose-pine",
-  --   opts = {
-  --     styles = { italic = false },
-  --   },
-  -- },
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    priority = 1000,
     opts = {
-      variant = "main",
-      dark_variant = "main",
-      disable_background = false,
-      disable_float_background = false,
-      styles = {
-        bold = true,
-        italic = false,
-        transparency = false,
-      },
-      groups = {
-        background = "#191724",
-        background_nc = "#191724",
-        panel = "#191724",
-        panel_nc = "#191724",
-      },
+      styles = { italic = false },
     },
   },
   {
@@ -33,32 +11,11 @@ return {
     name = "github-theme",
     lazy = false,
     priority = 1000,
-    config = function()
-      require("github-theme").setup({})
-      -- Set colorscheme immediately
-      -- vim.cmd("colorscheme github_light_colorblind")
-      -- Set our custom indent colors
-      vim.schedule(function()
-        vim.api.nvim_set_hl(0, "SnacksIndent", { fg = "#E7EBEF" })
-        vim.api.nvim_set_hl(0, "SnacksIndentScope", { fg = "#CED3D9" })
-      end)
-    end,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "github_light_colorblind",
     },
-    -- opts = function()
-    --   vim.api.nvim_create_autocmd("User", {
-    --     pattern = "LazyVimStarted",
-    --     callback = function()
-    --       require("lazy").load({ plugins = { "github-theme" } })
-    --       vim.cmd("colorscheme github_light_colorblind")
-    --     end,
-    --   })
-    --   -- Return empty opts to prevent default colorscheme
-    --   return {}
-    -- end,
   },
 }
