@@ -1,23 +1,32 @@
 return {
+  -- {
+  --   "rose-pine/neovim",
+  --   name = "rose-pine",
+  --   opts = {
+  --     styles = { italic = false },
+  --   },
+  -- },
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    opts = {
-      styles = { transparency = true, italic = false },
-    },
-  },
-  {
-    "sainnhe/everforest",
-    lazy = false,
     priority = 1000,
     opts = {
-      variant = "dark", -- or "light"
-      background = "hard", -- "soft", "medium", "hard"
+      variant = "main",
+      dark_variant = "main",
+      disable_background = false,
+      disable_float_background = false,
+      styles = {
+        bold = true,
+        italic = false,
+        transparency = false,
+      },
+      groups = {
+        background = "#191724",
+        background_nc = "#191724",
+        panel = "#191724",
+        panel_nc = "#191724",
+      },
     },
-    config = function(_, opts)
-      vim.o.background = opts.variant
-      vim.g.everforest_background = opts.background
-    end,
   },
   {
     "projekt0n/github-nvim-theme",
@@ -37,19 +46,19 @@ return {
   },
   {
     "LazyVim/LazyVim",
-    -- opts = {
-    --   colorscheme = "everforest",
-    -- },
-    opts = function()
-      vim.api.nvim_create_autocmd("User", {
-        pattern = "LazyVimStarted",
-        callback = function()
-          require("lazy").load({ plugins = { "github-theme" } })
-          vim.cmd("colorscheme github_light_colorblind")
-        end,
-      })
-      -- Return empty opts to prevent default colorscheme
-      return {}
-    end,
+    opts = {
+      colorscheme = "rose-pine",
+    },
+    -- opts = function()
+    --   vim.api.nvim_create_autocmd("User", {
+    --     pattern = "LazyVimStarted",
+    --     callback = function()
+    --       require("lazy").load({ plugins = { "github-theme" } })
+    --       vim.cmd("colorscheme github_light_colorblind")
+    --     end,
+    --   })
+    --   -- Return empty opts to prevent default colorscheme
+    --   return {}
+    -- end,
   },
 }
