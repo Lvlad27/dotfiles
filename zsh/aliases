@@ -35,12 +35,12 @@ alias aug='sudo apt-get upgrade -y'
 # +--------+
 
 alias v='nvim'
+alias v.='nvim .'
 
 # +----------+
 # | Projects |
 # +----------+
 
 alias proj='z Projects'
-alias kport=''
 alias npm-fm='export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain fm --domain-owner 264190062813 --region ap-southeast-2 --query authorizationToken --output text`'
 
