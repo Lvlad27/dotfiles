@@ -56,5 +56,20 @@ return {
         todo = { raw = "[-]", rendered = "󰥔 ", highlight = "RenderMarkdownTodo", scope_highlight = nil },
       },
     },
+    bullet = {
+      enabled = true,
+      render_modes = false,
+      -- icons = { "●", "○", "◆", "◇" },
+      icons = { "•", "◦", "♦", "♢" },
+
+      ordered_icons = function(ctx)
+        local value = vim.trim(ctx.value)
+        local index = tonumber(value:sub(1, #value - 1))
+        return string.format("%d.", index > 1 and index or ctx.index)
+      end,
+      left_pad = 0,
+      right_pad = 0,
+      highlight = "RenderMarkdownBullet",
+    },
   },
 }
