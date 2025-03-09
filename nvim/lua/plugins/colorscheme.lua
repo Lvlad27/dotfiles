@@ -15,7 +15,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine-main",
+      colorscheme = "github_light_colorblind",
     },
   },
 }
