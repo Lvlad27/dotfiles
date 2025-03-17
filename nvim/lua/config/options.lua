@@ -7,3 +7,4 @@ vim.g.snacks_animate = false
 vim.opt.cursorlineopt = "number"
 vim.opt.termguicolors = true
 vim.opt.cursorline = true
+vim.g.root_spec = { { ".git", "lua" } }
