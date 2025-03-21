@@ -1,9 +1,9 @@
 [general]
-import = ["./themes/themes/gruvbox_material_medium_dark.toml"]
+import = ["./themes/themes/rose_pine.toml"]
 
 # Window Customization
 [window]
-# opacity = 0.8
+opacity = 0.7
 dimensions = { columns = 140, lines = 38 }
 padding = { x = 0, y = 0 }
 decorations = "None"
@@ -15,11 +15,6 @@ multiplier = 3
 
 # Font Customization
 [font]
-# JET BRAINS
-# normal = { family = "JetBrainsMono Nerd Font", style = "Medium" }
-# bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-# italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
-#
 # IOSEVKA
 normal = { family = "Iosevka", style = "Medium Extended" }
 bold = { family = "Iosevka", style = "Bold Extended" }

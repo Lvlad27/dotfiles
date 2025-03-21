@@ -18,6 +18,10 @@ map("n", "<C-S-c>", ":CopyBufferInfo<CR>", { desc = "Copy buffer path and conten
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 
+-- Remap Ctrl-D and Ctrl-U with centering
+map("n", "<C-b>", "<C-b>zz", opts)
+map("n", "<C-f>", "<C-f>zz", opts)
+
 -- Escape with Ctrl + c
 map("i", "<C-c>", "<Esc>")
 
@@ -28,3 +32,9 @@ map("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
 map("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
 map("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
 map("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
+
+vim.keymap.set("n", "<leader>y#", function()
+  local relative_path = vim.fn.expand("%")
+  vim.fn.setreg("+", relative_path)
+  vim.notify("Copied relative path: " .. relative_path)
+end, { desc = "Copy relative path" })
