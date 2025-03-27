@@ -23,7 +23,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 vim.api.nvim_create_autocmd("ColorScheme", {
   callback = function()
-    -- Get current colorscheme
     local current_theme = vim.g.colors_name
 
     if current_theme == "github_light_colorblind" then
@@ -33,7 +32,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     end
 
     if current_theme == "rose-pine" then
-      -- Set the light theme indent colors
+      -- Set the dark theme indent colors
       vim.api.nvim_set_hl(0, "SnacksIndent", { fg = "#32304a" })
       vim.api.nvim_set_hl(0, "SnacksIndentScope", { fg = "#797593" })
     end
