@@ -38,3 +38,24 @@ vim.keymap.set("n", "<leader>y#", function()
   vim.fn.setreg("+", relative_path)
   vim.notify("Copied relative path: " .. relative_path)
 end, { desc = "Copy relative path" })
+
+local themes = { "rose-pine", "rose-pine-main", "github_light_colorblind" }
+
+local function toggle_theme()
+  local new_theme
+  print("Current theme: " .. vim.g.colors_name)
+
+  if vim.g.colors_name == themes[3] then
+    new_theme = themes[2]
+  elseif vim.g.colors_name == themes[1] then
+    new_theme = themes[3]
+  else
+    -- Fallback: if the vim.g.colors_name theme isn’t one of our two, default to rose-pine.
+    new_theme = themes[2]
+  end
+
+  vim.cmd("colorscheme " .. new_theme)
+  print("Switched to: " .. new_theme)
+end
+
+vim.keymap.set("n", "<leader>ut", toggle_theme, { desc = "Toggle Theme" })
