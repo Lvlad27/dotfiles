@@ -12,7 +12,7 @@ vim.api.nvim_create_user_command("CopyBufferInfo", function()
   vim.fn.setreg("+", combined)
   vim.notify("Buffer path and contents copied to clipboard", vim.log.levels.INFO)
 end, {})
-map("n", "<C-S-c>", ":CopyBufferInfo<CR>", { desc = "Copy buffer path and contents", silent = true })
+map("n", "<leader>C", ":CopyBufferInfo<CR>", { desc = "Copy buffer path and contents", silent = true })
 
 -- Remap Ctrl-D and Ctrl-U with centering
 map("n", "<C-d>", "<C-d>zz", opts)
