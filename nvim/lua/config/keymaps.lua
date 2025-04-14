@@ -28,10 +28,10 @@ map("i", "<C-c>", "<Esc>")
 -- Replacess all instances of the word under the cursor
 map("n", "<leader>bs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-map("n", "<A-j>", ":m .+1<CR>==") -- move line up(n)
-map("n", "<A-k>", ":m .-2<CR>==") -- move line down(n)
-map("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line up(v)
-map("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line down(v)
+map("n", "<A-j>", ":m .+1<CR>==", opts) -- move line up(n)
+map("n", "<A-k>", ":m .-2<CR>==", opts) -- move line down(n)
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- move line up(v)
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- move line down(v)
 
 vim.keymap.set("n", "<leader>y#", function()
   local relative_path = vim.fn.expand("%")
