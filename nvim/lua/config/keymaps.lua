@@ -15,10 +15,6 @@ end, {})
 map("n", "<leader>C", ":CopyBufferInfo<CR>", { desc = "Copy buffer path and contents", silent = true })
 
 -- Remap Ctrl-D and Ctrl-U with centering
-map("n", "<C-d>", "<C-d>zz", opts)
-map("n", "<C-u>", "<C-u>zz", opts)
-
--- Remap Ctrl-D and Ctrl-U with centering
 map("n", "<C-b>", "<C-b>zz", opts)
 map("n", "<C-f>", "<C-f>zz", opts)
 
