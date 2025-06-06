@@ -1,5 +1,7 @@
 [general]
-import = ["./themes/themes/rose_pine.toml"]
+# import = ["./themes/themes/rose_pine.toml"]
+# import = ["./themes/themes/alabaster_dark.toml"]
+import = ["./themes/themes/uterm.toml"]
 
 # Window Customization
 [window]
