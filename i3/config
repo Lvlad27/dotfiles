@@ -338,9 +338,10 @@ exec --no-startup-id nm-applet
 
 exec_always feh --bg-scale "$HOME/Pictures/wallpapers/astronaut.jpeg"
 
-exec --no-startup-id i3-msg 'workspace 1; exec alacritty -e tmux new-session -s IDE'
-exec --no-startup-id i3-msg 'workspace 3; exec thunar'
-exec --no-startup-id i3-msg 'workspace 9; exec alacritty -e tmux'
+exec --no-startup-id i3-msg 'workspace 1; exec code'
+exec --no-startup-id i3-msg 'workspace 2; exec brave-browser'
+exec --no-startup-id i3-msg 'workspace 3; exec alacritty -e tmux'
+exec --no-startup-id i3-msg 'workspace 4; exec thunar'
 
 # start dunst on system startup
 exec --no-startup-id dunst
