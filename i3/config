@@ -346,7 +346,7 @@ exec --no-startup-id i3-msg 'workspace 4; exec thunar'
 # start dunst on system startup
 exec --no-startup-id dunst
 
-exec --no-startup-id picom
+exec_always --no-startup-id picom
 
 # start with correct monitor config
 exec --no-startup-id sh "$HOME/.config/X11/monitor.sh", mode "default"
