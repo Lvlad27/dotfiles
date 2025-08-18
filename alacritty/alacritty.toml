@@ -3,7 +3,7 @@ import = ["./themes/themes/rose_pine.toml"]
 
 # Window Customization
 [window]
-opacity = 0.7
+opacity = 0.85
 dimensions = { columns = 140, lines = 38 }
 padding = { x = 0, y = 0 }
 decorations = "None"
@@ -15,12 +15,17 @@ multiplier = 3
 
 # Font Customization
 [font]
-# IOSEVKA
+# IOSEVKA EXTENDED
 normal = { family = "Iosevka", style = "Medium Extended" }
 bold = { family = "Iosevka", style = "Bold Extended" }
 italic = { family = "Iosevka", style = "Medium Extended Italic" }
 bold_italic = { family = "Iosevka", style = "Bold Extended Italic" }
-#
+
+# IOSEVKA
+# normal = { family = "Iosevka", style = "Medium" }
+# bold = { family = "Iosevka", style = "Bold" }
+# italic = { family = "Iosevka", style = "Medium Italic" }
+# bold_italic = { family = "Iosevka", style = "Bold Italic" }
 
 size = 10.5
 offset = { x = 0, y = 0 }
