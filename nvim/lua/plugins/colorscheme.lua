@@ -3,7 +3,7 @@ return {
     "rose-pine/neovim",
     name = "rose-pine",
     opts = {
-      styles = { italic = false },
+      styles = { italic = false, transparency = true },
     },
   },
   {
@@ -11,6 +11,9 @@ return {
     name = "github-theme",
     lazy = false,
     priority = 1000,
+    opts = {
+      options = {},
+    },
   },
   {
     "LazyVim/LazyVim",
