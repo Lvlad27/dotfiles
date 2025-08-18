@@ -349,7 +349,7 @@ exec --no-startup-id dunst
 exec_always --no-startup-id picom
 
 # start with correct monitor config
-exec --no-startup-id sh "$HOME/.config/X11/monitor.sh", mode "default"
+exec --no-startup-id sh "$HOME/.config/X11/monitor.sh"
 
 # Change language
 exec_always --no-startup-id "setxkbmap -layout us,ro -option 'grp:ctrl_alt_toggle'"
