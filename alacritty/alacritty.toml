@@ -1,11 +1,11 @@
 [general]
-# import = ["./themes/themes/rose_pine.toml"]
+import = ["./themes/themes/rose_pine.toml"]
 # import = ["./themes/themes/alabaster_dark.toml"]
-import = ["./themes/themes/uterm.toml"]
+# import = ["./themes/themes/uterm.toml"]
 
 # Window Customization
 [window]
-# opacity = 0.8
+opacity = 0.8
 dimensions = { columns = 140, lines = 38 }
 padding = { x = 0, y = 0 }
 decorations = "None"
@@ -27,11 +27,15 @@ multiplier = 3
 # bold = { family = "Ubuntu Nerd Font Nerd Font", style = "Bold" }
 # italic = { family = "Ubuntu Nerd Font Nerd Font", style = "Medium" }
 
-normal = { family = "Iosevka Medium Extended", style = "Medium" }
-bold = { family = "Iosevka Extended", style = "Bold" }
-italic = { family = "Iosevka Extended", style = "Medium" }
+# normal = { family = "Iosevka Medium Extended", style = "Medium" }
+# bold = { family = "Iosevka Extended", style = "Bold" }
+# italic = { family = "Iosevka Extended", style = "Medium" }
 
-size = 10.5
+normal = { family = "Iosevka Medium", style = "Medium" }
+bold = { family = "Iosevka", style = "Bold" }
+italic = { family = "Iosevka", style = "Medium" }
+
+size = 11
 offset = { x = 0, y = 0 }
 glyph_offset = { x = 0, y = 0 }
 

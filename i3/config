@@ -252,7 +252,8 @@ mode "$mode_system" {
 bindsym $mod+BackSpace mode "$mode_system"
 
 # https://github.com/D3Ext/aesthetic-wallpapers
-exec_always --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/ubuntu-black-4k.png
+# exec_always --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/ubuntu-black-4k.png
+exec_always --no-startup-id feh --no-fehbg --bg-scale ~/Pictures/wallpapers/07.jpg
 
 
 # floating pop up automatically
@@ -446,7 +447,7 @@ bindsym $mod+Shift+b exec "$HOME/dotfiles/scripts/connect_buds.sh"
 bindsym $mod+Shift+\ exec "/opt/cisco/anyconnect/bin/vpnui"
 
 # start picom on system startup
-# exec --no-startup-id picom --experimental-backends
+exec_always --no-startup-id picom --experimental-backends
 
 # start with correct monitor config
 exec --no-startup-id sh "$HOME/.config/X11/monitor.sh", mode "default"

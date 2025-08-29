@@ -12,7 +12,7 @@ vim.api.nvim_create_user_command("CopyBufferInfo", function()
   vim.fn.setreg("+", combined)
   vim.notify("Buffer path and contents copied to clipboard", vim.log.levels.INFO)
 end, {})
-map("n", "<leader>C", ":CopyBufferInfo<CR>", { desc = "Copy buffer path and contents", silent = true })
+map("n", "<C-M-p>", ":CopyBufferInfo<CR>", { desc = "Copy buffer path and contents", silent = true })
 
 -- Remap Ctrl-D and Ctrl-U with centering
 map("n", "<C-d>", "<C-d>zz", opts)
@@ -43,18 +43,15 @@ vim.keymap.set("n", "<leader>y#", function()
   vim.notify("Copied relative path: " .. relative_path)
 end, { desc = "Copy relative path" })
 
-local themes = { "rose-pine", "rose-pine-main", "github_light_colorblind" }
+local themes = { "rose-pine-main", "github_light_colorblind" }
 
 local function toggle_theme()
   local new_theme
   print("Current theme: " .. vim.g.colors_name)
 
-  if vim.g.colors_name == themes[3] then
-    new_theme = themes[2]
-  elseif vim.g.colors_name == themes[1] then
-    new_theme = themes[3]
+  if vim.g.colors_name == themes[2] then
+    new_theme = themes[1]
   else
-    -- Fallback: if the vim.g.colors_name theme isn’t one of our two, default to rose-pine.
     new_theme = themes[2]
   end
 

@@ -68,3 +68,5 @@ export PATH="$PATH:$HOME/n/bin"
 export N_PREFIX="$HOME/n"; PATH="$N_PREFIX/bin:$PATH"
 
 export PATH="/home/vladleontescu/nvim/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
