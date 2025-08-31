@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-WIDTH=${WIDTH:-200}
+WIDTH=${WIDTH:-800}
 HEIGHT=${HEIGHT:-200}
 DATEFMT=${DATEFMT:-"+%a %d.%m.%Y %H:%M:%S"}
 SHORTFMT=${SHORTFMT:-"+%H:%M:%S"}
@@ -30,8 +30,10 @@ case "$BLOCK_BUTTON" in
     SCREEN_HEIGHT=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d'x' -f2)
 
     # calculate the position of the lower right corner of the popup
-    posX=$(($SCREEN_WIDTH - $WIDTH - 28))
-    posY=$(($SCREEN_HEIGHT - $HEIGHT - 60))
+    # posX=$(($SCREEN_WIDTH - $WIDTH - 28))
+    # posY=$(($SCREEN_HEIGHT - $HEIGHT - 60))
+    posX=$(( (SCREEN_WIDTH - WIDTH - 2050) / 2 ))
+    posY=5
 
     i3-msg -q "exec yad --calendar \
         --width=$WIDTH --height=$HEIGHT \

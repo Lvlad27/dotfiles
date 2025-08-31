@@ -5,7 +5,7 @@ import = ["./themes/themes/rose_pine.toml"]
 [window]
 opacity = 0.85
 dimensions = { columns = 140, lines = 38 }
-padding = { x = 0, y = 0 }
+padding = { x = 10, y = 5 }
 decorations = "None"
 dynamic_title = true
 
