@@ -148,6 +148,9 @@ bindsym $mod+Return exec alacritty -e tmux
 # start file manager
 bindsym $mod+f exec thunar
 
+# start calculator
+bindsym $mod+F1 exec gnome-calculator
+
 # start browser
 bindsym $mod+b exec brave
 
@@ -164,7 +167,7 @@ bindsym $mod+c exec brave --app="https://calendar.google.com/calendar/u/0/r"
 bindsym $mod+v exec code
 
 # open neovim
-bindsym $mod+n exec alacritty -e tmux new-session -s nvim nvim
+bindsym $mod+n exec alacritty -e bash -c 'tmux has-session -t nvim 2>/dev/null && tmux attach -t nvim || tmux new-session -s nvim nvim'
 
 # open obsidian
 bindsym $mod+o exec obsidian
@@ -175,6 +178,7 @@ bindsym $mod+Shift+s exec brave --app="https://open.spotify.com/?_ga=2.130902027
 # open ai
 bindsym $mod+a exec brave --app="https://gemini.google.com/app"
 bindsym $mod+Shift+a exec brave --app="https://notebooklm.google.com/"
+bindsym $mod+g exec brave --app="https://grok.com/"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -415,6 +419,7 @@ for_window [instance="code"] border pixel 1
 for_window [instance="open.spotify.com"] border pixel 1, floating disable
 for_window [instance="gemini.google.com__app"] border pixel 1, floating disable
 for_window [instance="notebooklm.google.com"] border pixel 1, floating disable
+for_window [instance="grok.com"] border pixel 1, floating disable
 
 # fix yad bug
 for_window [class="Yad"] floating enable
